@@ -83,7 +83,13 @@ export default function Home() {
 
       {/* NAV */}
       <nav>
-        <NavLogo />
+        <a href="#top" className="nlogo">
+          <span className="nlogo-mark">G</span>
+          <span className="nlogo-text">
+            <span className="nlogo-name">GILLIAM</span>
+            <span className="nlogo-sub">INSURANCE SERVICES</span>
+          </span>
+        </a>
         <div className="nlinks">
           <a href="#coverage">Coverage</a>
           <a href="#about">About Keaton</a>
@@ -97,7 +103,7 @@ export default function Home() {
       {/* HERO */}
       <section className="hero" id="top">
         <div className="hl">
-          <HeroLogo />
+          <img src={`${BASE}/logo.png`} alt="Gilliam Insurance Services" className="hlogo" />
           <div className="eyebrow">
             <div className="eline" />
             <span>Farm Bureau Insurance &middot; Southeast Michigan</span>
@@ -503,16 +509,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer>
-        <div className="footer-logo-wrap">
-          <div className="logo-badge" style={{ width: "32px", height: "32px", fontSize: "16px" }}>
-            <span className="logo-g" style={{ fontSize: "16px" }}>G</span>
-            <div className="logo-badge-line" />
-          </div>
-          <div className="logo-wordmark">
-            <span className="logo-gilliam" style={{ fontSize: "13px" }}>GILLIAM</span>
-            <span className="logo-ins" style={{ fontSize: "8px" }}>INSURANCE SERVICES</span>
-          </div>
-        </div>
+        <img src={`${BASE}/logo.png`} alt="Gilliam Insurance Services" className="flogof" />
         <nav className="flinks">
           <a href="#coverage">Coverage</a>
           <a href="#about">About</a>
