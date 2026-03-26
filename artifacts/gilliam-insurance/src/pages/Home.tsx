@@ -112,7 +112,6 @@ export default function Home() {
             <a href="#quote" className="btnr">Get a Free Quote</a>
             <a href="tel:7342302464" className="btng">Call (734) 230-2464</a>
           </div>
-          <p className="hphone">Or call directly: <a href="tel:7342302464">(734) 230-2464</a></p>
         </div>
         <div className="hr">
           <div className="acard">
