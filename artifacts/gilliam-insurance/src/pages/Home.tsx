@@ -507,10 +507,8 @@ export default function Home() {
       {/* FARM BUREAU CREDENTIALS — Task 1: text only, no SVG logo */}
       <section className="sec bred">
         <div className="fbinner reveal">
-          <div className="fb-name-block">
-            <div className="fb-name-main">Farm Bureau</div>
-            <div className="fb-name-ins">Insurance</div>
-            <div className="fb-name-state">Michigan</div>
+          <div className="fb-logo-wrap">
+            <div className="fb-logo-crop" />
           </div>
           <div className="fbcreds">
             <div className="fbcred">
