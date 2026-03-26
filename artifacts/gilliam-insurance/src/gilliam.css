@@ -212,6 +212,14 @@ footer{background:#060606;border-top:2px solid var(--red);padding:34px 80px;disp
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
 .reveal.visible{opacity:1;transform:none}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.numgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+.numcard{background:#fff;border:1px solid #e8e8e8;border-radius:4px;padding:32px 28px;display:flex;align-items:flex-start;gap:20px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.numicon{flex-shrink:0;width:52px;height:52px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff}
+.numinfo{display:flex;flex-direction:column;gap:4px}
+.numlabel{font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.8px;color:#666}
+.numval{font-family:'DM Sans',sans-serif;font-weight:800;font-size:24px;color:var(--red);text-decoration:none;line-height:1.2}
+.numval:hover{text-decoration:underline}
+.numsub{font-size:13px;color:#888;margin-top:2px}
 @media(max-width:1100px){
   nav{padding:0 24px}
   .nlinks a:not(.ncta){display:none}
@@ -231,6 +239,7 @@ footer{background:#060606;border-top:2px solid var(--red);padding:34px 80px;disp
   .fbratings{align-items:center}
   .rgrid{grid-template-columns:1fr}
   .cgallery{grid-template-columns:repeat(2,1fr)}
+  .numgrid{grid-template-columns:1fr}
   .fgrid{grid-template-columns:1fr}
   .citygrid{grid-template-columns:repeat(3,1fr)}
   .bcta{grid-template-columns:1fr;padding:60px 24px}

@@ -12,7 +12,7 @@ const CITIES = [
   "Springville","Azalia","Monroe Twp"
 ];
 
-type TabId = "team" | "reviews" | "community" | "cities" | null;
+type TabId = "team" | "reviews" | "community" | "cities" | "numbers" | null;
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -245,6 +245,16 @@ export default function Home() {
             <h3>Umbrella Policies</h3>
             <p>One lawsuit can wipe out everything above your auto or home limits. An umbrella policy adds $1M+ of protection for just a few hundred dollars a year.</p>
           </div>
+          <div className="ccard reveal d1">
+            <span className="cicon">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+                <polyline points="16 7 22 7 22 13"/>
+              </svg>
+            </span>
+            <h3>Annuities</h3>
+            <p>Secure guaranteed income for retirement with a Farm Bureau annuity. We'll help you build a plan that protects your savings and provides peace of mind for the future.</p>
+          </div>
         </div>
       </section>
 
@@ -255,7 +265,7 @@ export default function Home() {
           Meet the Team. Read the Reviews. <em>See Our Area.</em>
         </h2>
         <div className="tab-bar reveal">
-          {(["team","reviews","community","cities"] as TabId[]).map((tab) => (
+          {(["team","reviews","community","cities","numbers"] as TabId[]).map((tab) => (
             <button
               key={tab}
               className={`tab-btn tab-btn--light${activeTab === tab ? " tab-btn--active" : ""}`}
@@ -265,6 +275,7 @@ export default function Home() {
               {tab === "reviews" && "Client Reviews"}
               {tab === "community" && "Community"}
               {tab === "cities" && "Service Area"}
+              {tab === "numbers" && "Important Numbers"}
               <span className="tab-chevron">{activeTab === tab ? "▲" : "▼"}</span>
             </button>
           ))}
@@ -394,6 +405,51 @@ export default function Home() {
           <p className="tab-intro tab-intro--dark">Gilliam Insurance Services proudly serves families and businesses throughout Wayne, Monroe, and surrounding counties.</p>
           <div className="citygrid">
             {CITIES.map((city) => <div key={city} className="city">{city}</div>)}
+          </div>
+        </div>
+
+        {/* IMPORTANT NUMBERS PANEL */}
+        <div className={`tab-panel tab-panel--light${activeTab === "numbers" ? " tab-panel--open" : ""}`}>
+          <p className="tab-intro tab-intro--dark">Need to reach us or Farm Bureau directly? Here are the numbers that matter most.</p>
+          <div className="numgrid">
+            <div className="numcard">
+              <div className="numicon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.72 6.72l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+              </div>
+              <div className="numinfo">
+                <div className="numlabel">Gilliam Insurance Services</div>
+                <a href="tel:7342302464" className="numval">(734) 230-2464</a>
+                <div className="numsub">Main office line</div>
+              </div>
+            </div>
+            <div className="numcard">
+              <div className="numicon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4.5 8-10.5V5l-8-3-8 3v6.5c0 6 8 10.5 8 10.5z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </div>
+              <div className="numinfo">
+                <div className="numlabel">Farm Bureau Claims Line</div>
+                <a href="tel:8773246764" className="numval">(877) 324-6764</a>
+                <div className="numsub">File or check on a claim</div>
+              </div>
+            </div>
+            <div className="numcard">
+              <div className="numicon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <div className="numinfo">
+                <div className="numlabel">After Hours / Emergency</div>
+                <a href="tel:8005352335" className="numval">(800) 535-2335</a>
+                <div className="numsub">Available after business hours</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
