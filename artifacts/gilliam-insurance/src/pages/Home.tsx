@@ -181,32 +181,68 @@ export default function Home() {
         <h2 className="stitle white reveal">Complete Protection for <em>Every</em> Part of Your Life</h2>
         <div className="cgrid">
           <div className="ccard reveal d1">
-            <span className="cicon">🚗</span>
+            <span className="cicon">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 17H3v-4l2.5-6h13L21 13v4h-2"/>
+                <circle cx="7.5" cy="17.5" r="2.5"/>
+                <circle cx="16.5" cy="17.5" r="2.5"/>
+                <path d="M10 17h4"/>
+              </svg>
+            </span>
             <h3>Auto Insurance</h3>
             <p>With nearly 1 in 5 Michigan drivers uninsured, proper auto coverage is essential. We make sure you're fully protected, including uninsured motorist coverage.</p>
           </div>
           <div className="ccard reveal d2">
-            <span className="cicon">🏠</span>
+            <span className="cicon">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 12l9-9 9 9"/>
+                <path d="M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9"/>
+              </svg>
+            </span>
             <h3>Home Insurance</h3>
             <p>Your home is your biggest asset. We review your policy annually to make sure your coverage reflects its current value and nothing is left unprotected.</p>
           </div>
           <div className="ccard reveal d3">
-            <span className="cicon">❤️</span>
+            <span className="cicon">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 22s8-4.5 8-10.5V5l-8-3-8 3v6.5c0 6 8 10.5 8 10.5z"/>
+                <path d="M9 12h1.5l1-2.5 2 5 1-2.5H15"/>
+              </svg>
+            </span>
             <h3>Life Insurance</h3>
             <p>A healthy 25-year-old can get $250k in coverage for around $20/month. We'll get you a quote same day — no pressure, no runaround.</p>
           </div>
           <div className="ccard reveal d1">
-            <span className="cicon">🏢</span>
+            <span className="cicon">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="4" width="12" height="17" rx="1"/>
+                <rect x="15" y="10" width="6" height="11" rx="1"/>
+                <path d="M7 8h2M11 8h2M7 12h2M11 12h2M7 16h2M11 16h2"/>
+              </svg>
+            </span>
             <h3>Business Insurance</h3>
             <p>Southeast Michigan business owners trust us for BOP, commercial auto, workers' comp, and liability. Let us protect what you've built.</p>
           </div>
           <div className="ccard reveal d2">
-            <span className="cicon">🌿</span>
+            <span className="cicon">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 13l4-6h10l4 6"/>
+                <rect x="3" y="13" width="18" height="8" rx="1"/>
+                <path d="M10 21v-5h4v5"/>
+                <path d="M7 16h2M15 16h2"/>
+              </svg>
+            </span>
             <h3>Farmowners Insurance</h3>
             <p>Farm Bureau was built by farmers. We offer comprehensive farmowners coverage protecting your land, livestock, equipment, and livelihood.</p>
           </div>
           <div className="ccard reveal d3">
-            <span className="cicon">☂️</span>
+            <span className="cicon">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M1 12a11 11 0 0122 0"/>
+                <path d="M12 12v7a2 2 0 004 0"/>
+                <path d="M12 2v2"/>
+              </svg>
+            </span>
             <h3>Umbrella Policies</h3>
             <p>One lawsuit can wipe out everything above your auto or home limits. An umbrella policy adds $1M+ of protection for just a few hundred dollars a year.</p>
           </div>

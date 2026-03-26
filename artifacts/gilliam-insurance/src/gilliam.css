@@ -115,7 +115,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.96
 .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:56px;background:var(--red)}
 .ccard{background:var(--black);padding:36px 28px;transition:all .28s;border-top:3px solid var(--red)}
 .ccard:hover{background:#161616;transform:translateY(-4px);box-shadow:0 16px 44px rgba(204,0,0,.22)}
-.cicon{font-size:30px;margin-bottom:16px;display:block;color:var(--red);}
+.cicon{display:block;margin-bottom:18px;color:var(--red);line-height:0}
+.cicon svg{display:block}
 .ccard h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#fff;margin-bottom:10px}
 .ccard p{font-size:14px;color:rgba(255,255,255,.52);line-height:1.72}
 .agrid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:56px}
