@@ -9,10 +9,9 @@ img{border:none!important;outline:none!important;box-shadow:none!important}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.96);backdrop-filter:blur(16px);height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;border-bottom:2px solid var(--red)}
 .nlogo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
 .nav-logo-img{
-  height:44px;
+  height:58px;
   width:auto;
   display:block;
-  object-fit:contain;
 }
 .hlogo{
   width:420px;
