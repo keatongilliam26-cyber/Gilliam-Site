@@ -6,10 +6,10 @@ body{font-family:'DM Sans',sans-serif;color:var(--black);background:var(--white)
 a{text-decoration:none}
 img{border:none!important;outline:none!important;box-shadow:none!important}
 #prog{position:fixed;top:0;left:0;height:3px;background:var(--red);z-index:9999;width:0;transition:width .08s linear;pointer-events:none}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.96);backdrop-filter:blur(16px);height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;border-bottom:2px solid var(--red)}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.96);backdrop-filter:blur(16px);height:86px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;border-bottom:2px solid var(--red)}
 .nlogo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
 .nav-logo-img{
-  height:58px;
+  height:72px;
   width:auto;
   display:block;
 }
@@ -49,7 +49,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.96
 .nlinks a:hover{color:#fff}
 .ncta{border:1px solid rgba(204,0,0,.65)!important;color:#fff!important;padding:9px 22px!important;font-weight:600!important;font-size:13px!important;letter-spacing:.5px;transition:all .2s!important;border-radius:0}
 .ncta:hover{background:var(--red)!important;border-color:var(--red)!important}
-.hero{min-height:100vh;padding-top:70px;background:var(--black);display:grid;grid-template-columns:1.15fr .85fr;position:relative;overflow:hidden}
+.hero{min-height:100vh;padding-top:86px;background:var(--black);display:grid;grid-template-columns:1.15fr .85fr;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 45%,rgba(204,0,0,.13) 0%,transparent 55%);pointer-events:none}
 .hl{padding:48px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center;z-index:1}
 .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:16px;opacity:0;animation:up .6s .15s forwards}
