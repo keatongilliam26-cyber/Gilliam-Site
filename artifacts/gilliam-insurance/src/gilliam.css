@@ -9,22 +9,27 @@ img{border:none!important;outline:none!important;box-shadow:none!important}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.96);backdrop-filter:blur(16px);height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;border-bottom:2px solid var(--red)}
 .nlogo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
 .nav-logo-img{
-  height:46px;
+  height:44px;
   width:auto;
   display:block;
   object-fit:contain;
   filter:brightness(0) invert(1);
 }
-.hlogo{
-  height:88px;
-  width:auto;
-  max-width:340px;
-  display:block;
-  object-fit:contain;
-  filter:brightness(0) invert(1);
+/* Hero logo — full-color on white card */
+.hlogo-card{
+  display:inline-block;
+  background:#fff;
+  padding:18px 36px;
   margin-bottom:36px;
   opacity:0;
   animation:up .6s .05s forwards;
+}
+.hlogo{
+  height:120px;
+  width:auto;
+  max-width:400px;
+  display:block;
+  object-fit:contain;
 }
 .flogof{
   height:44px;
@@ -32,7 +37,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.96
   display:block;
   object-fit:contain;
   filter:brightness(0) invert(1);
-  opacity:.8;
+  opacity:.85;
 }
 /* Farm Bureau text (Task 1) */
 .fb-name-block{display:flex;flex-direction:column;gap:2px}
@@ -245,8 +250,9 @@ footer{background:#060606;border-top:2px solid var(--red);padding:34px 80px;disp
   .fgrow{grid-template-columns:1fr}
   .fbsvg{margin:0 auto;display:block}
   .fbcreds{margin:16px 0}
-  .nav-logo-img{height:38px}
-  .hlogo{height:68px;max-width:260px}
+  .nav-logo-img{height:36px}
+  .hlogo-card{padding:14px 24px;margin-bottom:28px}
+  .hlogo{height:80px;max-width:260px}
 }
 @media(max-width:600px){
   .cgrid,.sgrid{grid-template-columns:1fr}

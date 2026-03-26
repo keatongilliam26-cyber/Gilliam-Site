@@ -99,7 +99,9 @@ export default function Home() {
       {/* HERO */}
       <section className="hero" id="top">
         <div className="hl">
-          <img src={`${BASE}/logo.png`} alt="Gilliam Insurance Services" className="hlogo" />
+          <div className="hlogo-card">
+            <img src={`${BASE}/logo.png`} alt="Gilliam Insurance Services" className="hlogo" />
+          </div>
           <div className="eyebrow">
             <div className="eline" />
             <span>Farm Bureau Insurance &middot; Southeast Michigan</span>
