@@ -335,6 +335,16 @@ export default function Home() {
               <p className="rtext">"Great rates, friendly, and knowledgeable. Awesome job!"</p>
               <div className="rauthor"><div className="ravatar">EN</div><div><strong>Eric Nadeau</strong><br /><small>Google Review</small></div></div>
             </div>
+            <div className="rcard">
+              <div className="rstars">★★★★★</div>
+              <p className="rtext">"I was recently in a terrible car accident and insurance skyrocketed on renewal. I got with Keaton and his team and not only did I get a better rate as my prior policy but he also made sure that everything was the same as my previous policy and even got some better coverages."</p>
+              <div className="rauthor"><div className="ravatar">RM</div><div><strong>Robby Martin</strong><br /><small>Google Review · Property &amp; Auto Insurance</small></div></div>
+            </div>
+            <div className="rcard">
+              <div className="rstars">★★★★★</div>
+              <p className="rtext">"Conner answered any and all questions and made sure we had better coverage at a much better price! Thanks for the care!"</p>
+              <div className="rauthor"><div className="ravatar">TB</div><div><strong>Tim Blacklock</strong><br /><small>Google Review</small></div></div>
+            </div>
           </div>
           <div className="rcta" style={{ marginTop: "32px" }}>
             <p>Had a great experience with Gilliam Insurance? We'd love to hear from you.</p>
@@ -369,6 +379,12 @@ export default function Home() {
                 <img src={`${BASE}/community-golf-banner.jpg`} alt="Gilliam Insurance Services Experience Matters banner at golf driving range" />
               </div>
               <p className="cgallery-cap">"The Experience Matters." — Our message on and off the course</p>
+            </div>
+            <div className="cgallery-card">
+              <div className="cgallery-img">
+                <img src={`${BASE}/community-ribbon.png`} alt="Gilliam Insurance Services ribbon cutting ceremony" />
+              </div>
+              <p className="cgallery-cap">Celebrating our grand opening with the Brownstown community</p>
             </div>
           </div>
         </div>
