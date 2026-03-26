@@ -7,48 +7,38 @@ a{text-decoration:none}
 img{border:none!important;outline:none!important;box-shadow:none!important}
 #prog{position:fixed;top:0;left:0;height:3px;background:var(--red);z-index:9999;width:0;transition:width .08s linear;pointer-events:none}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.96);backdrop-filter:blur(16px);height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;border-bottom:2px solid var(--red)}
-/* ── Nav logo ── */
-.nlogo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
-.nlogo-mark{
-  font-family:'Playfair Display',serif;
-  font-size:26px;
-  font-weight:900;
-  color:#fff;
-  background:var(--red);
-  width:38px;
-  height:38px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  clip-path:polygon(0 0,100% 0,100% 78%,50% 100%,0 78%);
-  line-height:1;
-}
-.nlogo-text{display:flex;flex-direction:column;gap:1px}
-.nlogo-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#fff;letter-spacing:3px;line-height:1}
-.nlogo-sub{font-size:7px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);line-height:1}
-/* ── Logo images (hero + footer) ── */
-.hlogo{
-  height:auto;
-  max-height:90px;
-  width:auto;
-  max-width:300px;
-  object-fit:contain;
+/* ── Logo image (nav, hero, footer all use logo-badge.png) ──
+   Image: 1320×2868px. Red logo area: rows 890–1836.
+   object-position Y% = offset/(scaledH - containerH) × 100
+   Nav  (190×64):  scaledH=412, offset=128, Y≈37%  → Gilliam half
+   Hero (280×200): scaledH=608, offset=189, Y≈46%  → full badge
+   Footer (90×65): scaledH=195, offset=60,  Y≈46%  → full badge
+────────────────────────────────────────────────────────── */
+.nlogo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+.nav-logo-img{
+  width:190px;
+  height:64px;
   display:block;
+  object-fit:cover;
+  object-position:center 37%;
+}
+.hlogo{
+  width:280px;
+  height:200px;
+  display:block;
+  object-fit:cover;
+  object-position:center 46%;
   margin-bottom:28px;
   opacity:0;
   animation:up .6s .05s forwards;
-  filter:brightness(1.4) contrast(1.1);
 }
 .flogof{
-  height:auto;
-  max-height:40px;
-  width:auto;
-  max-width:180px;
-  object-fit:contain;
+  width:90px;
+  height:65px;
   display:block;
-  filter:brightness(2) contrast(1.2);
-  opacity:.8;
+  object-fit:cover;
+  object-position:center 46%;
+  opacity:.9;
 }
 /* Farm Bureau text (Task 1) */
 .fb-name-block{display:flex;flex-direction:column;gap:2px}
@@ -73,7 +63,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.96
 .hero{min-height:100vh;padding-top:70px;background:var(--black);display:grid;grid-template-columns:1.15fr .85fr;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 45%,rgba(204,0,0,.13) 0%,transparent 55%);pointer-events:none}
 .hl{padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center;z-index:1}
-.hlogo{height:auto;max-height:86px;width:auto;max-width:290px;object-fit:contain;margin-bottom:30px;opacity:0;animation:up .6s .05s forwards;display:block}
 .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:16px;opacity:0;animation:up .6s .15s forwards}
 .eline{width:30px;height:2px;background:var(--red);flex-shrink:0}
 .eyebrow span{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red)}
@@ -260,6 +249,8 @@ footer{background:#060606;border-top:2px solid var(--red);padding:34px 80px;disp
   .fgrow{grid-template-columns:1fr}
   .fbsvg{margin:0 auto;display:block}
   .fbcreds{margin:16px 0}
+  .nav-logo-img{width:150px;height:50px}
+  .hlogo{width:220px;height:158px}
 }
 @media(max-width:600px){
   .cgrid,.sgrid{grid-template-columns:1fr}
