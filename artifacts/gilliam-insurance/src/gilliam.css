@@ -15,7 +15,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.96
   object-fit:contain;
 }
 .hlogo{
-  width:360px;
+  width:420px;
   height:auto;
   display:block;
   object-fit:contain;
@@ -52,7 +52,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.96
 .ncta:hover{background:var(--red)!important;border-color:var(--red)!important}
 .hero{min-height:100vh;padding-top:70px;background:var(--black);display:grid;grid-template-columns:1.15fr .85fr;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 45%,rgba(204,0,0,.13) 0%,transparent 55%);pointer-events:none}
-.hl{padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center;z-index:1}
+.hl{padding:48px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center;z-index:1}
 .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:16px;opacity:0;animation:up .6s .15s forwards}
 .eline{width:30px;height:2px;background:var(--red);flex-shrink:0}
 .eyebrow span{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red)}
