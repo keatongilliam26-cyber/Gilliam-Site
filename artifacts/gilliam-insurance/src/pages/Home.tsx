@@ -84,7 +84,7 @@ export default function Home() {
       {/* NAV */}
       <nav>
         <a href="#top" className="nlogo">
-          <img src={`${BASE}/logo.png`} alt="Gilliam Insurance Services" className="nav-logo-img" />
+          <img src={`${BASE}/logo-white.png`} alt="Gilliam Insurance Services" className="nav-logo-img" />
         </a>
         <div className="nlinks">
           <a href="#coverage">Coverage</a>
@@ -99,9 +99,7 @@ export default function Home() {
       {/* HERO */}
       <section className="hero" id="top">
         <div className="hl">
-          <div className="hlogo-card">
-            <img src={`${BASE}/logo.png`} alt="Gilliam Insurance Services" className="hlogo" />
-          </div>
+          <img src={`${BASE}/logo-white.png`} alt="Gilliam Insurance Services" className="hlogo" />
           <div className="eyebrow">
             <div className="eline" />
             <span>Farm Bureau Insurance &middot; Southeast Michigan</span>
@@ -550,7 +548,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer>
-        <img src={`${BASE}/logo.png`} alt="Gilliam Insurance Services" className="flogof" />
+        <img src={`${BASE}/logo-white.png`} alt="Gilliam Insurance Services" className="flogof" />
         <nav className="flinks">
           <a href="#coverage">Coverage</a>
           <a href="#about">About</a>
