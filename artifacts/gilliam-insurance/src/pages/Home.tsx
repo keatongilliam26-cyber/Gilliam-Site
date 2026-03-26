@@ -90,7 +90,7 @@ export default function Home() {
         </a>
         <div className="nlinks">
           <a href="#coverage">Coverage</a>
-          <a href="#about">About Keaton</a>
+          <a href="#about">About Us</a>
           <a href="#explore">Our Team & More</a>
           <a href="#reviews-tab" onClick={() => setActiveTab("reviews")}>Reviews</a>
           <a href="#explore" onClick={() => setActiveTab("cities")}>Service Area</a>
@@ -117,7 +117,7 @@ export default function Home() {
       {/* MOBILE DRAWER */}
       <div className={`mobile-drawer${menuOpen ? " mobile-drawer--open" : ""}`}>
         <a href="#coverage" onClick={closeMenu}>Coverage</a>
-        <a href="#about" onClick={closeMenu}>About Keaton</a>
+        <a href="#about" onClick={closeMenu}>About Us</a>
         <a href="#explore" onClick={closeMenu}>Our Team &amp; More</a>
         <a href="#reviews-tab" onClick={() => { setActiveTab("reviews"); closeMenu(); }}>Reviews</a>
         <a href="#explore" onClick={() => { setActiveTab("cities"); closeMenu(); }}>Service Area</a>
