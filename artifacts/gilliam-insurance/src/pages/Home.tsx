@@ -20,6 +20,8 @@ export default function Home() {
   const progressRef = useRef<HTMLDivElement>(null);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [activeTab, setActiveTab] = useState<TabId>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,7 +96,35 @@ export default function Home() {
           <a href="#explore" onClick={() => setActiveTab("cities")}>Service Area</a>
           <a href="tel:7342302464" className="ncta">(734) 230-2464</a>
         </div>
+        <button
+          className="hamburger"
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+        >
+          {menuOpen ? (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          ) : (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+              <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
+            </svg>
+          )}
+        </button>
       </nav>
+
+      {/* MOBILE DRAWER */}
+      <div className={`mobile-drawer${menuOpen ? " mobile-drawer--open" : ""}`}>
+        <a href="#coverage" onClick={closeMenu}>Coverage</a>
+        <a href="#about" onClick={closeMenu}>About Keaton</a>
+        <a href="#explore" onClick={closeMenu}>Our Team &amp; More</a>
+        <a href="#reviews-tab" onClick={() => { setActiveTab("reviews"); closeMenu(); }}>Reviews</a>
+        <a href="#explore" onClick={() => { setActiveTab("cities"); closeMenu(); }}>Service Area</a>
+        <a href="#explore" onClick={() => { setActiveTab("numbers"); closeMenu(); }}>Important Numbers</a>
+        <a href="#quote" onClick={closeMenu} className="mob-cta">Get a Free Quote</a>
+        <a href="tel:7342302464" onClick={closeMenu} className="mob-phone">(734) 230-2464</a>
+      </div>
 
       {/* HERO */}
       <section className="hero" id="top">
