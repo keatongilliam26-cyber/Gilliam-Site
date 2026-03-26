@@ -1,9 +1,54 @@
 import { useEffect, useRef, FormEvent, useState } from "react";
 import "../gilliam.css";
 
+const CITIES = [
+  "Brownstown","Woodhaven","Trenton","Riverview","Southgate","Wyandotte",
+  "Gibraltar","Flat Rock","Rockwood","Monroe","Grosse Ile","Allen Park",
+  "Lincoln Park","Taylor","Romulus","Belleville","Carleton","Dundee",
+  "Huron Twp","New Boston","LaSalle","Dearborn Hts","Melvindale","Ecorse",
+  "River Rouge","Detroit","Dearborn","Westland","Garden City","Inkster",
+  "Wayne","Canton","Ypsilanti","Milan","South Rockwood","Maybee",
+  "Estral Beach","Whittaker","Willis","Sumpter Twp","Van Buren Twp","Rawsonville",
+  "Springville","Azalia","Monroe Twp"
+];
+
+type TabId = "team" | "reviews" | "community" | "cities" | null;
+
+function NavLogo() {
+  return (
+    <a href="#top" className="nlogo">
+      <div className="logo-badge">
+        <span className="logo-g">G</span>
+        <div className="logo-badge-line" />
+      </div>
+      <div className="logo-wordmark">
+        <span className="logo-gilliam">GILLIAM</span>
+        <span className="logo-ins">INSURANCE SERVICES</span>
+      </div>
+    </a>
+  );
+}
+
+function HeroLogo() {
+  return (
+    <div className="hlogo-wrap" style={{ opacity: 0, animation: "up .6s .05s forwards", display: "inline-flex", alignItems: "center", gap: "18px", marginBottom: "30px" }}>
+      <div className="hlogo-badge">
+        <span className="hlogo-g">G</span>
+        <div className="hlogo-badge-line" />
+      </div>
+      <div className="hlogo-wordmark">
+        <span className="hlogo-gilliam">GILLIAM</span>
+        <span className="hlogo-ins">INSURANCE SERVICES</span>
+        <span className="hlogo-sub-badge">Farm Bureau Agent · Southeast Michigan</span>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const progressRef = useRef<HTMLDivElement>(null);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [activeTab, setActiveTab] = useState<TabId>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,23 +102,23 @@ export default function Home() {
     }
   };
 
-  const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+  const toggleTab = (tab: TabId) => {
+    setActiveTab((prev) => (prev === tab ? null : tab));
+  };
 
   return (
     <>
-      <div id="prog" ref={progressRef}></div>
+      <div id="prog" ref={progressRef} />
 
       {/* NAV */}
       <nav>
-        <a href="#top" className="nlogo">
-          <img src={`${basePath}/logo.png`} alt="Gilliam Insurance Services" />
-        </a>
+        <NavLogo />
         <div className="nlinks">
           <a href="#coverage">Coverage</a>
           <a href="#about">About Keaton</a>
-          <a href="#team">Our Team</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#cities">Service Area</a>
+          <a href="#explore">Our Team & More</a>
+          <a href="#reviews-tab" onClick={() => setActiveTab("reviews")}>Reviews</a>
+          <a href="#explore" onClick={() => setActiveTab("cities")}>Service Area</a>
           <a href="tel:7342302464" className="ncta">(734) 230-2464</a>
         </div>
       </nav>
@@ -81,13 +126,9 @@ export default function Home() {
       {/* HERO */}
       <section className="hero" id="top">
         <div className="hl">
-          <img
-            className="hlogo"
-            src={`${basePath}/logo.png`}
-            alt="Gilliam Insurance Services"
-          />
+          <HeroLogo />
           <div className="eyebrow">
-            <div className="eline"></div>
+            <div className="eline" />
             <span>Farm Bureau Insurance &middot; Southeast Michigan</span>
           </div>
           <h1>Your <em>Local</em> Agent.<br />Real Coverage.<br />Real People.</h1>
@@ -102,12 +143,10 @@ export default function Home() {
         </div>
         <div className="hr">
           <div className="acard">
-            <div className="aphoto">
-              <span className="ainit">KG</span>
-            </div>
+            <div className="aphoto"><span className="ainit">KG</span></div>
             <div className="aname">Keaton Gilliam</div>
             <div className="arole">Licensed Farm Bureau Agent</div>
-            <div className="ahr"></div>
+            <div className="ahr" />
             <div className="arow">
               <span className="aicon">📍</span>
               <span className="atxt">21689 Telegraph Rd<br />Brownstown, MI 48183</span>
@@ -240,23 +279,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FARM BUREAU CREDENTIALS */}
+      {/* FARM BUREAU CREDENTIALS — Task 1: text only, no SVG logo */}
       <section className="sec bred">
         <div className="fbinner reveal">
-          <div>
-            <svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg" className="fbsvg">
-              <path d="M5,4 L49,4 Q57,4 57,12 L57,43 Q57,59 31,71 Q5,59 5,43 Z" fill="#111" />
-              <path d="M5,47 Q5,61 31,71 Q57,61 57,47 L57,51 Q57,63 31,73 Q5,63 5,51 Z" fill="#CC0000" />
-              <rect x="15" y="15" width="19" height="4" rx="1" fill="white" />
-              <rect x="15" y="15" width="4" height="23" rx="1" fill="white" />
-              <rect x="15" y="26" width="13" height="3.5" rx="1" fill="white" />
-              <rect x="33" y="15" width="4" height="23" rx="1" fill="white" />
-              <path d="M33,15 L41,15 Q48,15 48,21.5 Q48,27 41,27 L33,27" stroke="white" strokeWidth="3.5" fill="none" strokeLinejoin="round" strokeLinecap="round" />
-              <path d="M33,27 L42,27 Q50,27 50,33.5 Q50,38 42,38 L33,38" stroke="white" strokeWidth="3.5" fill="none" strokeLinejoin="round" strokeLinecap="round" />
-              <text x="68" y="30" fontFamily="Arial Black,sans-serif" fontSize="17" fontWeight="900" fill="white" letterSpacing="1.5">FARM BUREAU</text>
-              <text x="68" y="50" fontFamily="Arial Black,sans-serif" fontSize="15" fontWeight="900" fill="white" letterSpacing="2.5">INSURANCE</text>
-              <text x="68" y="66" fontFamily="Arial,sans-serif" fontSize="9" fill="rgba(255,255,255,0.6)" letterSpacing="2">MICHIGAN</text>
-            </svg>
+          <div className="fb-name-block">
+            <div className="fb-name-main">Farm Bureau</div>
+            <div className="fb-name-ins">Insurance</div>
+            <div className="fb-name-state">Michigan</div>
           </div>
           <div className="fbcreds">
             <div className="fbcred">
@@ -289,104 +318,129 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TEAM */}
-      <section className="sec bblack" id="team">
-        <div className="slabel reveal w">Our Team</div>
-        <h2 className="stitle white reveal">The People Behind <em>Your</em> Policy</h2>
-        <p className="reveal" style={{ fontSize: "15px", color: "rgba(255,255,255,.5)", lineHeight: 1.8, marginTop: "16px", marginBottom: "56px", maxWidth: "580px" }}>
-          We're not a call center. We're a small local team that genuinely cares about every client we work with.
-        </p>
-        <div className="team-grid">
-          <div className="team-card reveal d1">
-            <div className="team-photo"><div className="team-init">KG</div></div>
-            <div className="team-role-badge">Owner &amp; Agent</div>
-            <h3 className="team-name">Keaton Gilliam</h3>
-            <div className="team-divider"></div>
-            <p className="team-bio">Keaton founded Gilliam Insurance Services with one goal: to be the kind of agent he'd want for his own family. As a licensed multi-line Farm Bureau Insurance agent, he handles the full picture — home, auto, life, commercial, and farm coverage.</p>
-            <div className="team-tags">
-              <span>Home &amp; Auto</span><span>Life Insurance</span><span>Commercial</span><span>Farmowners</span>
-            </div>
-          </div>
-          <div className="team-card reveal d2">
-            <div className="team-photo"><div className="team-init">CC</div></div>
-            <div className="team-role-badge">Sales Specialist</div>
-            <h3 className="team-name">Connor</h3>
-            <div className="team-divider"></div>
-            <p className="team-bio">Connor is our sales specialist and brings energy, knowledge, and a no-pressure approach to every conversation. He's fully licensed to discuss life insurance and makes sure every new client walks away fully protected.</p>
-            <div className="team-tags">
-              <span>New Business</span><span>Auto &amp; Home</span><span>Life Insurance</span><span>Bundling</span>
-            </div>
-          </div>
-          <div className="team-card reveal d3">
-            <div className="team-photo"><div className="team-init">BC</div></div>
-            <div className="team-role-badge">Customer Service</div>
-            <h3 className="team-name">Bre</h3>
-            <div className="team-divider"></div>
-            <p className="team-bio">Bre is the backbone of our agency. She handles renewals, policy updates, certificates of insurance, and everything in between — making sure our clients feel taken care of every single time they reach out.</p>
-            <div className="team-tags">
-              <span>Policy Service</span><span>Renewals</span><span>COIs</span><span>Client Support</span>
-            </div>
-          </div>
+      {/* ACCORDION EXPLORER — Task 3: Team, Reviews, Community, Cities */}
+      <section className="sec bblack" id="explore">
+        <div className="slabel reveal w">Explore More</div>
+        <h2 className="stitle white reveal" style={{ marginBottom: "36px" }}>
+          Get to Know <em>Our Agency</em>
+        </h2>
+        <div className="tab-bar reveal">
+          {(["team","reviews","community","cities"] as TabId[]).map((tab) => (
+            <button
+              key={tab}
+              className={`tab-btn${activeTab === tab ? " tab-btn--active" : ""}`}
+              onClick={() => toggleTab(tab)}
+            >
+              {tab === "team" && "Our Team"}
+              {tab === "reviews" && "Client Reviews"}
+              {tab === "community" && "Community"}
+              {tab === "cities" && "Service Area"}
+              <span className="tab-chevron">{activeTab === tab ? "▲" : "▼"}</span>
+            </button>
+          ))}
         </div>
-      </section>
 
-      {/* REVIEWS */}
-      <section className="sec boff" id="reviews">
-        <div className="slabel reveal">What Our Clients Say</div>
-        <h2 className="stitle reveal">Real People. Real Results.<br /><em>Southeast Michigan</em> Families Trust Us.</h2>
-        <div className="rgrid">
-          <div className="rcard reveal d1">
-            <div className="rstars">★★★★★</div>
-            <p className="rtext">"I couldn't be happier to have found Keaton and his wonderful staff! He was so knowledgeable and truly earned my business and trust. He got me better coverage for a lower cost, and I was also able to set up two very affordable life insurance policies. You won't regret reaching out!"</p>
-            <div className="rauthor">
-              <div className="ravatar">KG</div>
-              <div><strong>Kara Gagnon</strong><br /><small>Google Review · Life, Auto &amp; Renter's Insurance</small></div>
+        {/* TEAM PANEL */}
+        <div id="team" className={`tab-panel${activeTab === "team" ? " tab-panel--open" : ""}`}>
+          <p className="tab-intro">We're not a call center. We're a small local team that genuinely cares about every client we work with.</p>
+          <div className="team-grid">
+            <div className="team-card">
+              <div className="team-photo"><div className="team-init">KG</div></div>
+              <div className="team-role-badge">Owner &amp; Agent</div>
+              <h3 className="team-name">Keaton Gilliam</h3>
+              <div className="team-divider" />
+              <p className="team-bio">Keaton founded Gilliam Insurance Services with one goal: to be the kind of agent he'd want for his own family. As a licensed multi-line Farm Bureau Insurance agent, he handles the full picture — home, auto, life, commercial, and farm coverage.</p>
+              <div className="team-tags"><span>Home &amp; Auto</span><span>Life Insurance</span><span>Commercial</span><span>Farmowners</span></div>
             </div>
-          </div>
-          <div className="rcard reveal d2">
-            <div className="rstars">★★★★★</div>
-            <p className="rtext">"We couldn't be happier to have found Keaton and his wonderful staff! He helped us with a situation our former agent caused even before we signed anything. He earned our business and more importantly our trust. He got us better coverage for the same or cheaper amount."</p>
-            <div className="rauthor">
-              <div className="ravatar">ML</div>
-              <div><strong>Melissa Linkey</strong><br /><small>Google Review</small></div>
+            <div className="team-card">
+              <div className="team-photo"><div className="team-init">CC</div></div>
+              <div className="team-role-badge">Sales Specialist</div>
+              <h3 className="team-name">Connor</h3>
+              <div className="team-divider" />
+              <p className="team-bio">Connor is our sales specialist and brings energy, knowledge, and a no-pressure approach to every conversation. He's fully licensed to discuss life insurance and makes sure every new client walks away fully protected.</p>
+              <div className="team-tags"><span>New Business</span><span>Auto &amp; Home</span><span>Life Insurance</span><span>Bundling</span></div>
             </div>
-          </div>
-          <div className="rcard reveal d3">
-            <div className="rstars">★★★★★</div>
-            <p className="rtext">"Keaton was able to save me over $1,200 annually on my auto insurance, despite having a teen driver. His quote was by far the lowest for even more coverage. He also provided home insurance with better coverage and rates, plus a very affordable umbrella policy. Highly recommend!"</p>
-            <div className="rauthor">
-              <div className="ravatar">ER</div>
-              <div><strong>Erica Roberts</strong><br /><small>Google Review · Auto, Home &amp; Umbrella</small></div>
-            </div>
-          </div>
-          <div className="rcard reveal d1">
-            <div className="rstars">★★★★★</div>
-            <p className="rtext">"Great experience and highly recommend for all of your insurance needs. Keaton was very knowledgeable and made sure that my needs were met."</p>
-            <div className="rauthor">
-              <div className="ravatar">RH</div>
-              <div><strong>Robert Hopper</strong><br /><small>Google Review</small></div>
-            </div>
-          </div>
-          <div className="rcard reveal d2">
-            <div className="rstars">★★★★★</div>
-            <p className="rtext">"I highly recommend doing business with Connor and Keaton at Farm Bureau Insurance. They went above and beyond to help me out of a very bad situation. Thank you very much for helping me guys."</p>
-            <div className="rauthor">
-              <div className="ravatar">RP</div>
-              <div><strong>Rick Pogats</strong><br /><small>Google Review</small></div>
-            </div>
-          </div>
-          <div className="rcard reveal d3">
-            <div className="rstars">★★★★★</div>
-            <p className="rtext">"Great rates, friendly, and knowledgeable. Awesome job!"</p>
-            <div className="rauthor">
-              <div className="ravatar">EN</div>
-              <div><strong>Eric Nadeau</strong><br /><small>Google Review</small></div>
+            <div className="team-card">
+              <div className="team-photo"><div className="team-init">BC</div></div>
+              <div className="team-role-badge">Customer Service</div>
+              <h3 className="team-name">Bre</h3>
+              <div className="team-divider" />
+              <p className="team-bio">Bre is the backbone of our agency. She handles renewals, policy updates, certificates of insurance, and everything in between — making sure our clients feel taken care of every single time they reach out.</p>
+              <div className="team-tags"><span>Policy Service</span><span>Renewals</span><span>COIs</span><span>Client Support</span></div>
             </div>
           </div>
         </div>
-        <div className="rcta reveal">
-          <p>Had a great experience with Gilliam Insurance? We'd love to hear from you.</p>
-          <a href="https://g.page/r/review" className="btnr" target="_blank" rel="noopener">Leave a Google Review ★</a>
+
+        {/* REVIEWS PANEL */}
+        <div id="reviews-tab" className={`tab-panel${activeTab === "reviews" ? " tab-panel--open" : ""}`}>
+          <p className="tab-intro">Real People. Real Results. Southeast Michigan families trust us.</p>
+          <div className="rgrid">
+            <div className="rcard">
+              <div className="rstars">★★★★★</div>
+              <p className="rtext">"I couldn't be happier to have found Keaton and his wonderful staff! He was so knowledgeable and truly earned my business and trust. He got me better coverage for a lower cost, and I was also able to set up two very affordable life insurance policies. You won't regret reaching out!"</p>
+              <div className="rauthor"><div className="ravatar">KG</div><div><strong>Kara Gagnon</strong><br /><small>Google Review · Life, Auto &amp; Renter's Insurance</small></div></div>
+            </div>
+            <div className="rcard">
+              <div className="rstars">★★★★★</div>
+              <p className="rtext">"We couldn't be happier to have found Keaton and his wonderful staff! He helped us with a situation our former agent caused even before we signed anything. He earned our business and more importantly our trust. He got us better coverage for the same or cheaper amount."</p>
+              <div className="rauthor"><div className="ravatar">ML</div><div><strong>Melissa Linkey</strong><br /><small>Google Review</small></div></div>
+            </div>
+            <div className="rcard">
+              <div className="rstars">★★★★★</div>
+              <p className="rtext">"Keaton was able to save me over $1,200 annually on my auto insurance, despite having a teen driver. His quote was by far the lowest for even more coverage. He also provided home insurance with better coverage and rates, plus a very affordable umbrella policy. Highly recommend!"</p>
+              <div className="rauthor"><div className="ravatar">ER</div><div><strong>Erica Roberts</strong><br /><small>Google Review · Auto, Home &amp; Umbrella</small></div></div>
+            </div>
+            <div className="rcard">
+              <div className="rstars">★★★★★</div>
+              <p className="rtext">"Great experience and highly recommend for all of your insurance needs. Keaton was very knowledgeable and made sure that my needs were met."</p>
+              <div className="rauthor"><div className="ravatar">RH</div><div><strong>Robert Hopper</strong><br /><small>Google Review</small></div></div>
+            </div>
+            <div className="rcard">
+              <div className="rstars">★★★★★</div>
+              <p className="rtext">"I highly recommend doing business with Connor and Keaton at Farm Bureau Insurance. They went above and beyond to help me out of a very bad situation. Thank you very much for helping me guys."</p>
+              <div className="rauthor"><div className="ravatar">RP</div><div><strong>Rick Pogats</strong><br /><small>Google Review</small></div></div>
+            </div>
+            <div className="rcard">
+              <div className="rstars">★★★★★</div>
+              <p className="rtext">"Great rates, friendly, and knowledgeable. Awesome job!"</p>
+              <div className="rauthor"><div className="ravatar">EN</div><div><strong>Eric Nadeau</strong><br /><small>Google Review</small></div></div>
+            </div>
+          </div>
+          <div className="rcta" style={{ marginTop: "32px" }}>
+            <p>Had a great experience with Gilliam Insurance? We'd love to hear from you.</p>
+            <a href="https://g.page/r/review" className="btnr" target="_blank" rel="noopener">Leave a Google Review ★</a>
+          </div>
+        </div>
+
+        {/* COMMUNITY PANEL */}
+        <div className={`tab-panel${activeTab === "community" ? " tab-panel--open" : ""}`}>
+          <p className="tab-intro">We show up for our neighbors — not just when something goes wrong, but every day in the communities we call home.</p>
+          <div className="cgallery" style={{ maxWidth: "100%" }}>
+            <div className="cgallery-card">
+              <div className="cgallery-img"><span style={{ fontSize: "48px" }}>🏢</span></div>
+              <p className="cgallery-cap">Our office at 21689 Telegraph Rd, Brownstown, MI</p>
+            </div>
+            <div className="cgallery-card">
+              <div className="cgallery-img"><span style={{ fontSize: "48px" }}>🏫</span></div>
+              <p className="cgallery-cap">Proud to donate $2,000 to Airport Community Schools — Ending Childhood Hunger in Michigan</p>
+            </div>
+            <div className="cgallery-card">
+              <div className="cgallery-img"><span style={{ fontSize: "48px" }}>⛳</span></div>
+              <p className="cgallery-cap">Out in the community — sponsoring local golf events</p>
+            </div>
+            <div className="cgallery-card">
+              <div className="cgallery-img"><span style={{ fontSize: "48px" }}>🏆</span></div>
+              <p className="cgallery-cap">"The Experience Matters." — Our message on and off the course</p>
+            </div>
+          </div>
+        </div>
+
+        {/* CITIES PANEL */}
+        <div id="cities" className={`tab-panel${activeTab === "cities" ? " tab-panel--open" : ""}`}>
+          <p className="tab-intro">Gilliam Insurance Services proudly serves families and businesses throughout Wayne, Monroe, and surrounding counties.</p>
+          <div className="citygrid">
+            {CITIES.map((city) => <div key={city} className="city">{city}</div>)}
+          </div>
         </div>
       </section>
 
@@ -444,7 +498,7 @@ export default function Home() {
               </div>
               <div className="fg">
                 <label>Anything Else We Should Know?</label>
-                <textarea name="notes" placeholder="Optional — e.g. teen driver, new home, etc."></textarea>
+                <textarea name="notes" placeholder="Optional — e.g. teen driver, new home, etc." />
               </div>
               <button
                 type="submit"
@@ -463,60 +517,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* COMMUNITY */}
-      <section className="sec-community" id="community">
-        <div className="slabel reveal" style={{ justifyContent: "center" }}>In The Community</div>
-        <h2 className="stitle reveal" style={{ color: "#fff", textAlign: "center", marginBottom: "12px" }}>More Than Just Insurance</h2>
-        <p className="csub reveal">We show up for our neighbors — not just when something goes wrong, but every day in the communities we call home.</p>
-        <div className="cgallery">
-          <div className="cgallery-card reveal">
-            <div className="cgallery-img" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#111" }}>
-              <span style={{ fontSize: "48px" }}>🏢</span>
-            </div>
-            <p className="cgallery-cap">Our office at 21689 Telegraph Rd, Brownstown, MI</p>
-          </div>
-          <div className="cgallery-card reveal d1">
-            <div className="cgallery-img" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#111" }}>
-              <span style={{ fontSize: "48px" }}>🏫</span>
-            </div>
-            <p className="cgallery-cap">Proud to donate $2,000 to Airport Community Schools — Ending Childhood Hunger in Michigan</p>
-          </div>
-          <div className="cgallery-card reveal d2">
-            <div className="cgallery-img" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#111" }}>
-              <span style={{ fontSize: "48px" }}>⛳</span>
-            </div>
-            <p className="cgallery-cap">Out in the community — sponsoring local golf events</p>
-          </div>
-          <div className="cgallery-card reveal d3">
-            <div className="cgallery-img" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#111" }}>
-              <span style={{ fontSize: "48px" }}>🏆</span>
-            </div>
-            <p className="cgallery-cap">"The Experience Matters." — Our message on and off the course</p>
-          </div>
-        </div>
-      </section>
-
-      {/* CITIES */}
-      <section className="secsm blight" id="cities">
-        <div className="slabel reveal">Service Area</div>
-        <h2 className="stitle reveal">Serving All of <em>Southeast Michigan</em></h2>
-        <p className="cintro reveal">Gilliam Insurance Services proudly serves families and businesses throughout Wayne, Monroe, and surrounding counties.</p>
-        <div className="citygrid">
-          {[
-            "Brownstown","Woodhaven","Trenton","Riverview","Southgate","Wyandotte",
-            "Gibraltar","Flat Rock","Rockwood","Monroe","Grosse Ile","Allen Park",
-            "Lincoln Park","Taylor","Romulus","Belleville","Carleton","Dundee",
-            "Huron Twp","New Boston","LaSalle","Dearborn Hts","Melvindale","Ecorse",
-            "River Rouge","Detroit","Dearborn","Westland","Garden City","Inkster",
-            "Wayne","Canton","Ypsilanti","Milan","South Rockwood","Maybee",
-            "Estral Beach","Whittaker","Willis","Sumpter Twp","Van Buren Twp","Rawsonville",
-            "Springville","Azalia","Monroe Twp"
-          ].map((city) => (
-            <div key={city} className="city">{city}</div>
-          ))}
-        </div>
-      </section>
-
       {/* BOTTOM CTA */}
       <section className="bcta">
         <div>
@@ -532,13 +532,22 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer>
-        <img src={`${basePath}/logo.png`} alt="Gilliam Insurance Services" className="flogof" />
+        <div className="footer-logo-wrap">
+          <div className="logo-badge" style={{ width: "32px", height: "32px", fontSize: "16px" }}>
+            <span className="logo-g" style={{ fontSize: "16px" }}>G</span>
+            <div className="logo-badge-line" />
+          </div>
+          <div className="logo-wordmark">
+            <span className="logo-gilliam" style={{ fontSize: "13px" }}>GILLIAM</span>
+            <span className="logo-ins" style={{ fontSize: "8px" }}>INSURANCE SERVICES</span>
+          </div>
+        </div>
         <nav className="flinks">
           <a href="#coverage">Coverage</a>
           <a href="#about">About</a>
-          <a href="#team">Our Team</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#cities">Service Area</a>
+          <a href="#explore" onClick={() => setActiveTab("team")}>Our Team</a>
+          <a href="#explore" onClick={() => setActiveTab("reviews")}>Reviews</a>
+          <a href="#explore" onClick={() => setActiveTab("cities")}>Service Area</a>
           <a href="#quote">Get a Quote</a>
         </nav>
         <p className="fcopy">© 2025 Gilliam Insurance Services · Farm Bureau Insurance Agent · Brownstown, MI</p>
