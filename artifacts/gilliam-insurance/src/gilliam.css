@@ -7,38 +7,32 @@ a{text-decoration:none}
 img{border:none!important;outline:none!important;box-shadow:none!important}
 #prog{position:fixed;top:0;left:0;height:3px;background:var(--red);z-index:9999;width:0;transition:width .08s linear;pointer-events:none}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.96);backdrop-filter:blur(16px);height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;border-bottom:2px solid var(--red)}
-/* ── Logo image (nav, hero, footer all use logo-badge.png) ──
-   Image: 1320×2868px. Red logo area: rows 890–1836.
-   object-position Y% = offset/(scaledH - containerH) × 100
-   Nav  (190×64):  scaledH=412, offset=128, Y≈37%  → Gilliam half
-   Hero (280×200): scaledH=608, offset=189, Y≈46%  → full badge
-   Footer (90×65): scaledH=195, offset=60,  Y≈46%  → full badge
-────────────────────────────────────────────────────────── */
 .nlogo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
 .nav-logo-img{
-  width:190px;
-  height:64px;
+  height:46px;
+  width:auto;
   display:block;
-  object-fit:cover;
-  object-position:center 37%;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
 }
 .hlogo{
-  width:280px;
-  height:200px;
+  height:88px;
+  width:auto;
+  max-width:340px;
   display:block;
-  object-fit:cover;
-  object-position:center 46%;
-  margin-bottom:28px;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+  margin-bottom:36px;
   opacity:0;
   animation:up .6s .05s forwards;
 }
 .flogof{
-  width:90px;
-  height:65px;
+  height:44px;
+  width:auto;
   display:block;
-  object-fit:cover;
-  object-position:center 46%;
-  opacity:.9;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+  opacity:.8;
 }
 /* Farm Bureau text (Task 1) */
 .fb-name-block{display:flex;flex-direction:column;gap:2px}
@@ -251,8 +245,8 @@ footer{background:#060606;border-top:2px solid var(--red);padding:34px 80px;disp
   .fgrow{grid-template-columns:1fr}
   .fbsvg{margin:0 auto;display:block}
   .fbcreds{margin:16px 0}
-  .nav-logo-img{width:150px;height:50px}
-  .hlogo{width:220px;height:158px}
+  .nav-logo-img{height:38px}
+  .hlogo{height:68px;max-width:260px}
 }
 @media(max-width:600px){
   .cgrid,.sgrid{grid-template-columns:1fr}
