@@ -426,7 +426,7 @@ export default function Home() {
         <div className="fbinner reveal">
           <div className="fb-name-block">
             <div className="fb-name-main">Farm Bureau</div>
-            <div className="fb-name-ins">Insurance</div>
+            <div className="fb-name-ins">Insurance&reg;</div>
             <div className="fb-name-state">Michigan</div>
           </div>
           <div className="fbcreds">
