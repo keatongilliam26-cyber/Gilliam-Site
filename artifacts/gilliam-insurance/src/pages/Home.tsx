@@ -348,19 +348,27 @@ export default function Home() {
           <p className="tab-intro tab-intro--dark">We show up for our neighbors — not just when something goes wrong, but every day in the communities we call home.</p>
           <div className="cgallery" style={{ maxWidth: "100%" }}>
             <div className="cgallery-card">
-              <div className="cgallery-img"><span style={{ fontSize: "48px" }}>🏢</span></div>
+              <div className="cgallery-img">
+                <img src={`${BASE}/community-office.jpg`} alt="Gilliam Insurance Services office at 21689 Telegraph Rd, Brownstown MI" />
+              </div>
               <p className="cgallery-cap">Our office at 21689 Telegraph Rd, Brownstown, MI</p>
             </div>
             <div className="cgallery-card">
-              <div className="cgallery-img"><span style={{ fontSize: "48px" }}>🏫</span></div>
+              <div className="cgallery-img">
+                <img src={`${BASE}/community-donation.jpg`} alt="$2,000 donation check to Airport Community Schools" />
+              </div>
               <p className="cgallery-cap">Proud to donate $2,000 to Airport Community Schools — Ending Childhood Hunger in Michigan</p>
             </div>
             <div className="cgallery-card">
-              <div className="cgallery-img"><span style={{ fontSize: "48px" }}>⛳</span></div>
+              <div className="cgallery-img">
+                <img src={`${BASE}/community-golf-booth.jpg`} alt="Gilliam Farm Bureau Insurance booth at local golf event" />
+              </div>
               <p className="cgallery-cap">Out in the community — sponsoring local golf events</p>
             </div>
             <div className="cgallery-card">
-              <div className="cgallery-img"><span style={{ fontSize: "48px" }}>🏆</span></div>
+              <div className="cgallery-img">
+                <img src={`${BASE}/community-golf-banner.jpg`} alt="Gilliam Insurance Services Experience Matters banner at golf driving range" />
+              </div>
               <p className="cgallery-cap">"The Experience Matters." — Our message on and off the course</p>
             </div>
           </div>
