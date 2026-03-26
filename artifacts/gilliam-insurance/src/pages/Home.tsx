@@ -538,7 +538,7 @@ export default function Home() {
       <section className="sec bred">
         <div className="fbinner reveal">
           <div className="fb-logo-wrap">
-            <div className="fb-logo-crop" />
+            <img src={`${BASE}/fb-logo.png`} alt="Farm Bureau Insurance Michigan" className="fb-logo-img" />
           </div>
           <div className="fbcreds">
             <div className="fbcred">
