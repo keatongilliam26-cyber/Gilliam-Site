@@ -255,7 +255,7 @@ footer{background:#060606;border-top:2px solid var(--red);padding:34px 80px;disp
   .flinks{display:none}
   .fgrow{grid-template-columns:1fr}
   .fbsvg{margin:0 auto;display:block}
-  .fb-logo-img{width:220px}
+  .fb-logo-img{width:360px}
   .fbcreds{margin:16px 0}
   .nav-logo-img{height:34px}
   .hlogo{width:260px;margin-bottom:28px}
