@@ -255,6 +255,17 @@ export default function Home() {
             <h3>Annuities</h3>
             <p>Secure guaranteed income for retirement with a Farm Bureau annuity. We'll help you build a plan that protects your savings and provides peace of mind for the future.</p>
           </div>
+          <div className="ccard reveal d2">
+            <span className="cicon">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 17l4-8 4 4 4-6 4 10"/>
+                <path d="M2 20h20"/>
+                <path d="M12 3a2 2 0 100 4 2 2 0 000-4z"/>
+              </svg>
+            </span>
+            <h3>Country &amp; Lake Estates</h3>
+            <p>Specialized coverage designed for country properties and lakefront homes. We tailor policies to protect the unique risks of rural and waterfront living.</p>
+          </div>
         </div>
       </section>
 
