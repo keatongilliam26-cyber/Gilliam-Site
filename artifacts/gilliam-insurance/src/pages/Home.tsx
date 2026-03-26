@@ -506,6 +506,7 @@ export default function Home() {
                   <option>Home Insurance</option>
                   <option>Auto Insurance</option>
                   <option>Auto + Home Bundle</option>
+                  <option>Life + Home + Auto Bundle</option>
                   <option>Commercial / Business</option>
                   <option>Farmowners</option>
                   <option>Umbrella Policy</option>
