@@ -14,36 +14,7 @@ const CITIES = [
 
 type TabId = "team" | "reviews" | "community" | "cities" | null;
 
-function NavLogo() {
-  return (
-    <a href="#top" className="nlogo">
-      <div className="logo-badge">
-        <span className="logo-g">G</span>
-        <div className="logo-badge-line" />
-      </div>
-      <div className="logo-wordmark">
-        <span className="logo-gilliam">GILLIAM</span>
-        <span className="logo-ins">INSURANCE SERVICES</span>
-      </div>
-    </a>
-  );
-}
-
-function HeroLogo() {
-  return (
-    <div className="hlogo-wrap" style={{ opacity: 0, animation: "up .6s .05s forwards", display: "inline-flex", alignItems: "center", gap: "18px", marginBottom: "30px" }}>
-      <div className="hlogo-badge">
-        <span className="hlogo-g">G</span>
-        <div className="hlogo-badge-line" />
-      </div>
-      <div className="hlogo-wordmark">
-        <span className="hlogo-gilliam">GILLIAM</span>
-        <span className="hlogo-ins">INSURANCE SERVICES</span>
-        <span className="hlogo-sub-badge">Farm Bureau Agent · Southeast Michigan</span>
-      </div>
-    </div>
-  );
-}
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 export default function Home() {
   const progressRef = useRef<HTMLDivElement>(null);
