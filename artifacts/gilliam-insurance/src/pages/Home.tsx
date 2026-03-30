@@ -327,7 +327,7 @@ export default function Home() {
           <p className="tab-intro tab-intro--dark">We're not a call center. We're a small local team that genuinely cares about every client we work with.</p>
           <div className="team-grid">
             <div className="team-card">
-              <div className="team-photo"><div className="team-init">KG</div></div>
+              <div className="team-photo"><img src={`${BASE}/keaton-gilliam.jpeg`} alt="Keaton Gilliam" /></div>
               <div className="team-role-badge">Owner &amp; Agent</div>
               <h3 className="team-name">Keaton Gilliam</h3>
               <div className="team-divider" />
