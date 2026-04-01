@@ -1,6 +1,5 @@
 [build]
-  base    = "artifacts/gilliam-insurance"
-  command = "npm install -g pnpm && pnpm install --frozen-lockfile && pnpm run build"
+  command = "cd ../.. && pnpm install --frozen-lockfile && pnpm --filter @workspace/gilliam-insurance run build"
   publish = "dist/public"
 
 [build.environment]

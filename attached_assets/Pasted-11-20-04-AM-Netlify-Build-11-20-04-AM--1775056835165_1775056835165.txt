@@ -1,0 +1,63 @@
+11:20:04 AM: Netlify Build                                                 
+11:20:04 AM: ────────────────────────────────────────────────────────────────
+11:20:04 AM: ​
+11:20:04 AM: ❯ Version
+11:20:04 AM:   @netlify/build 35.11.2
+11:20:04 AM: ​
+11:20:04 AM: ❯ Flags
+11:20:04 AM:   accountId: 69c5a37ce32d2015ded7938e
+11:20:04 AM:   baseRelDir: true
+11:20:04 AM:   buildId: 69cd378af02574dea8b3f0e2
+11:20:04 AM:   deployId: 69cd378af02574dea8b3f0e4
+11:20:04 AM:   packagePath: artifacts/gilliam-insurance
+11:20:04 AM: ​
+11:20:04 AM: ❯ Current directory
+11:20:04 AM:   /opt/build/repo/artifacts/gilliam-insurance
+11:20:04 AM: ​
+11:20:04 AM: ❯ Config file
+11:20:04 AM:   /opt/build/repo/artifacts/gilliam-insurance/netlify.toml
+11:20:04 AM: ​
+11:20:04 AM: ❯ Context
+11:20:04 AM:   production
+11:20:04 AM: ​
+11:20:04 AM: build.command from netlify.toml                               
+11:20:04 AM: ────────────────────────────────────────────────────────────────
+11:20:04 AM: ​
+11:20:04 AM: $ npm install -g pnpm && pnpm install --frozen-lockfile && pnpm run build
+11:20:05 AM: Failed during stage 'building site': Build script returned non-zero exit code: 2 (https://ntl.fyi/exit-code-2)
+11:20:05 AM: npm error code EEXIST
+11:20:05 AM: npm error path /opt/buildhome/.nvm/versions/node/v20.20.2/bin/pnpm
+11:20:05 AM: npm error EEXIST: file already exists
+11:20:05 AM: npm error File exists: /opt/buildhome/.nvm/versions/node/v20.20.2/bin/pnpm
+11:20:05 AM: npm error Remove the existing file and try again, or run npm
+11:20:05 AM: npm error with --force to overwrite files recklessly.
+11:20:05 AM: npm error A complete log of this run can be found in: /opt/buildhome/.npm/_logs/2026-04-01T15_20_04_935Z-debug-0.log
+11:20:05 AM: ​
+11:20:05 AM: "build.command" failed                                        
+11:20:05 AM: ────────────────────────────────────────────────────────────────
+11:20:05 AM: ​
+11:20:05 AM:   Error message
+11:20:05 AM:   Command failed with exit code 1: npm install -g pnpm && pnpm install --frozen-lockfile && pnpm run build (https://ntl.fyi/exit-code-1)
+11:20:05 AM: ​
+11:20:05 AM:   Error location
+11:20:05 AM:   In build.command from netlify.toml:
+11:20:05 AM:   npm install -g pnpm && pnpm install --frozen-lockfile && pnpm run build
+11:20:05 AM: ​
+11:20:05 AM:   Resolved config
+11:20:05 AM:   build:
+11:20:05 AM:     base: /opt/build/repo/artifacts/gilliam-insurance
+11:20:05 AM:     command: npm install -g pnpm && pnpm install --frozen-lockfile && pnpm run build
+11:20:05 AM:     commandOrigin: config
+11:20:05 AM:     environment:
+11:20:05 AM:       - NODE_VERSION
+11:20:05 AM:       - BASE_PATH
+11:20:05 AM:     publish: /opt/build/repo/artifacts/gilliam-insurance/dist/public
+11:20:05 AM:     publishOrigin: config
+11:20:05 AM:   redirects:
+11:20:05 AM:     - from: /*
+      status: 200
+      to: /index.html
+  redirectsOrigin: config
+11:20:05 AM: Build failed due to a user error: Build script returned non-zero exit code: 2
+11:20:05 AM: Failing build: Failed to build site
+11:20:06 AM: Finished processing build request in 15.177s
