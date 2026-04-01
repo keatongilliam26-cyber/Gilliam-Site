@@ -131,7 +131,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.96
 .acreds li::before{content:'\2713';color:var(--red);font-weight:700;font-size:14px;flex-shrink:0}
 .alogo{font-family:'Playfair Display',serif; font-size:24px; color:#fff; font-weight:700; margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.09);display:block}
 .team-group-photo{width:100%;max-width:800px;margin:0 auto 48px;overflow:hidden;border-radius:4px}
-.team-group-photo img{width:100%;height:360px;object-fit:cover;object-position:center 30%;display:block}
+.team-group-photo img{width:100%;height:auto;display:block}
 .team-group-caption{text-align:center;font-size:13px;color:var(--gray);margin-top:12px;letter-spacing:.3px}
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:0}
 .team-card{background:#111;border:1px solid #1e1e1e;padding:36px 28px}
