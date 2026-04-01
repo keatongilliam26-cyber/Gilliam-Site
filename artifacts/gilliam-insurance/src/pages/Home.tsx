@@ -300,7 +300,7 @@ export default function Home() {
       </section>
 
       {/* ACCORDION EXPLORER — Team, Reviews, Community, Cities */}
-      <section className="sec bblack" id="explore">
+      <section className="sec boff" id="explore">
         <div className="slabel reveal">Explore More</div>
         <h2 className="stitle reveal" style={{ marginBottom: "36px" }}>
           Meet the Team. Read the Reviews. <em>See Our Area.</em>
