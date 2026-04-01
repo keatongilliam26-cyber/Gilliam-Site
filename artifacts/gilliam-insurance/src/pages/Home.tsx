@@ -325,6 +325,10 @@ export default function Home() {
         {/* TEAM PANEL */}
         <div id="team" className={`tab-panel tab-panel--light${activeTab === "team" ? " tab-panel--open" : ""}`}>
           <p className="tab-intro tab-intro--dark">We're not a call center. We're a small local team that genuinely cares about every client we work with.</p>
+          <div className="team-group-photo">
+            <img src={`${BASE}/team-photo.jpeg`} alt="The Gilliam Insurance Services team in front of their Brownstown, MI office" />
+            <p className="team-group-caption">The Gilliam Insurance Team — 21689 Telegraph Rd, Brownstown, MI</p>
+          </div>
           <div className="team-grid">
             <div className="team-card">
               <div className="team-photo"><img src={`${BASE}/keaton-gilliam.jpeg`} alt="Keaton Gilliam" /></div>
